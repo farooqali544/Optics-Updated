@@ -1,14 +1,25 @@
-import { React } from "react";
+import { React, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 const Form = () => {
-
-
   const {
     register,
     handleSubmit,
+    getValues,
     formState: { errors },
   } = useForm();
+
+  const [balance, setBalance] = useState();
+  const [advance, setAdvance] = useState();
+  const [amount, setAmount] = useState();
+
+  useEffect(() => {
+    if (advance && amount) {
+      setBalance(amount - advance);
+    } else {
+      setBalance("");
+    }
+  }, [advance, amount]);
 
   const isValidDate = function (date) {
     return new Date(date) !== "Invalid Date" && !isNaN(new Date(date));
@@ -17,6 +28,7 @@ const Form = () => {
   const onSubmit = (data) => {
     const postData = {
       ...data,
+      balance: balance,
       oDate: data.oDate ? data.oDate : null,
       dDate: data.dDate ? data.dDate : null,
     };
@@ -45,10 +57,10 @@ const Form = () => {
         </div>
 
         <div className='form-field col-lg-12'>
-          {errors.name && <span>{errors.name.message}</span>}
+          {/* {errors.name && <span style={{ color: "red", marginLeft:80 }}>{errors.name.message}</span>} */}
           <input id='Name' className='input-text js-input' type='text' placeholder='hidden' {...register("name", { required: "Name is must" })} />
-          <label className='label' htmlFor='Name'>
-            Name
+          <label className='label' htmlFor='Name' style={{color:errors.name && "red"}}>
+            {errors.name?"Name is must":"Name"}
           </label>
         </div>
 
@@ -74,21 +86,35 @@ const Form = () => {
         </div>
 
         <div className='form-field col-lg-12'>
-          <input id='Amount' className='input-text js-input' type='number' placeholder='hidden' {...register("amount")} />
+          <input
+            id='Amount'
+            className='input-text js-input'
+            type='number'
+            placeholder='hidden'
+            {...register("amount")}
+            onChange={(e) => setAmount(e.target.value)}
+          />
           <label className='label' htmlFor='Amount'>
             Amount
           </label>
         </div>
 
         <div className='form-field col-lg-6 '>
-          <input id='Advance' className='input-text js-input' type='number' placeholder='hidden' {...register("advance")} />
+          <input
+            id='Advance'
+            className='input-text js-input'
+            type='number'
+            placeholder='hidden'
+            {...register("advance")}
+            onChange={(e) => setAdvance(e.target.value)}
+          />
           <label className='label' htmlFor='Advance'>
             Advance
           </label>
         </div>
 
         <div className='form-field col-lg-6 '>
-          <input id='Balance' className='input-text js-input' type='number' placeholder='hidden' {...register("balance")} />
+          <input id='Balance' className='input-text js-input' type='number' placeholder='hidden' {...register("balance")} disabled value={balance} />
           <label className='label' htmlFor='Balance'>
             Balance
           </label>
