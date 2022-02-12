@@ -1,0 +1,63 @@
+.preview-container{
+    display: flex;
+    margin: 20px auto;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.preview-container .search-bar{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 40px;
+   margin-bottom: 30px;
+    
+}
+
+.search-bar div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.search-bar div button{
+    align-self: flex-end;
+    margin-top: 5px;
+}
+
+table{
+    border-collapse: collapse;
+   
+}
+
+td, th {
+    border: 1px solid rgb(36, 34, 34);
+    background-color: rgb(61, 60, 60);
+    color: rgba(255, 255, 255, 0.911);
+    
+}
+ .basic-data{
+    cursor: pointer;
+}
+
+ .basic-data:hover td{
+    background-color: rgb(120, 155, 231) ;
+}
+
+.show-optics-data{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+
+}
+
+#shown-data, .show-optics-data {
+    background-color: rgba(118, 219, 194, 0.664);
+}
+#shown-data tr td{
+    color: blue;
+}
+

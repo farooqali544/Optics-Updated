@@ -1,0 +1,25 @@
+.input-tb{
+
+ position: relative;
+
+}
+
+.input-tb .input-wrapper{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: inline-block;
+}
+
+.input-tb input{
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    color: white;
+    outline: none;
+}
+
