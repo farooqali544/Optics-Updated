@@ -9,22 +9,8 @@ const Home = () => {
 
 
 
-<section className='brandingName'>
 <h1 className='title'>Eye Care Optics</h1>
-{/* 
-      <div className="addButton">
-      <button onClick={()=>{navigate("/add")}}>Add Data</button>
-      </div>
-
-
-      <div className="previewButton">
-      <button onClick={() =>{navigate("/preview")}}>Preview Data</button>
-      </div>
- */}
-
-
-
- {/* Buttons */}
+<section className='brandingName'>
 
  <button class="glow-on-hover" type="button" onClick={()=>{navigate("/add")}}>Add Data</button>
 
