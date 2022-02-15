@@ -7,8 +7,14 @@
     gap: 40px;
 }
 
-.home button{
-    font-size: 40px;
+.addButton{
+    font-size: 30px;
+    background-color: black;
+    padding: 40px;
+}
+
+.previewButton{
+    font-size: 30px;
     background-color: blue;
     padding: 40px;
 }

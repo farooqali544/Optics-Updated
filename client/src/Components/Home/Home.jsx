@@ -6,8 +6,18 @@ const Home = () => {
     const navigate = useNavigate();
 
   return <div className="home">
-      <button onClick={()=>{navigate("/add")}}>Add A form</button>
+{/* 
+      <div className="addButton">
+      <button onClick={()=>{navigate("/add")}}>Add Data</button>
+      </div>
+
+
+      <div className="previewButton">
       <button onClick={() =>{navigate("/preview")}}>Preview Data</button>
+      </div>
+ */}
+
+
   </div>;
 };
 

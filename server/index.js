@@ -11,7 +11,7 @@ const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   database: "opticsDb",
-  password: "admin",
+  password: "root",
 });
 
 app.get("/getData",  (req, res) => {
