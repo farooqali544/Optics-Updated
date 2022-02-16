@@ -45,14 +45,14 @@ const Form = () => {
         <div className='form-field col-lg-6'>
           <input id='Contact' name='Contact' placeholder='hidden' className='input-text js-input' type='text' {...register("contactNo")} />
           <label className='label' htmlFor='Contact'>
-            Contact No.
+            Contact Number
           </label>
         </div>
 
         <div className='form-field col-lg-6 '>
           <input id='Sr. No.' className='input-text js-input' placeholder='hidden' type='number' {...register("srNo")} />
           <label className='label' htmlFor='Sr. No.'>
-            Sr. No.
+            Serial Number
           </label>
         </div>
 
@@ -67,14 +67,14 @@ const Form = () => {
         <div className='form-field col-lg-6 '>
           <input id='O. Date' className='input-text js-input' type='date' placeholder='hidden' {...register("oDate")} />
           <label className='label' htmlFor='O. Date'>
-            O. Date
+            Order Date
           </label>
         </div>
 
         <div className='form-field col-lg-6 '>
           <input id='D. Date' className='input-text js-input' type='date' placeholder='hidden' {...register("dDate")} />
           <label className='label' htmlFor='D. Date'>
-            D. Date
+          Delivery Date
           </label>
         </div>
 
