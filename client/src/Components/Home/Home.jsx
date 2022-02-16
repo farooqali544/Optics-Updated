@@ -15,6 +15,9 @@ const Home = () => {
    
 
 <h1 className='title'>Eye Care Optics</h1>
+
+
+
 <section className='brandingName'  >
 
  <button class="glow-on-hover" type="button" onClick={()=>{navigate("/add")}}>Add Data</button>
