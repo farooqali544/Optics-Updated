@@ -5,12 +5,17 @@ const Home = () => {
 
     const navigate = useNavigate();
 
-  return <div className="home">
+    return <div className="home">
 
 
+
+    
+    
+
+   
 
 <h1 className='title'>Eye Care Optics</h1>
-<section className='brandingName'>
+<section className='brandingName'  >
 
  <button class="glow-on-hover" type="button" onClick={()=>{navigate("/add")}}>Add Data</button>
 
@@ -19,6 +24,7 @@ const Home = () => {
 
 
 </section>
+
   </div>;
 };
 
