@@ -1,0 +1,51 @@
+
+
+.previewtable {
+    max-width: 800px;
+    margin: 50px auto;
+    position: relative;
+  
+  }
+  .previewtable .title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 3.2em;
+    line-height: 48px;
+    padding-bottom: 48px;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+  }
+  
+
+
+
+.input-tb{
+
+    position: relative;
+   
+   }
+   
+   .previewtable{
+       position: absolute;
+       top:0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       display: inline-block;
+       width:100%;
+   
+   
+   }
+   
+   .previewtable input{
+       width: 100% !important;
+       box-sizing: border-box;
+       height: 100%;
+       border: none;
+       background-color: #28313b;
+       color: white;
+       outline: none;
+   }
+   
+   

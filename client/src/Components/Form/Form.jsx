@@ -1,6 +1,7 @@
 import { React, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import "./Form.css"
 const Form = () => {
   const {
     register,
@@ -264,9 +265,28 @@ const Form = () => {
           </tbody>
         </table>
 
+
+
+
+
+        {/* submit-btn */}
         <div className='form-field col-lg-12 text-center'>
           <input className='submit-btn' type='submit' value='Submit' />
         </div>
+
+
+
+
+        {/* preview-btn2 */}
+        <div className='form-field col-lg-12 text-center'>
+        
+          <input className='preview-btn2' type='submit' value='Submit' />
+        </div>
+
+
+
+
+
       </form>
     </section>
   );
