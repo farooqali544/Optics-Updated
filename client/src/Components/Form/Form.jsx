@@ -1,7 +1,7 @@
 import { React, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import "./Form.css"
+import "./Form.css";
 const Form = () => {
   const {
     register,
@@ -30,8 +30,12 @@ const Form = () => {
     const postData = {
       ...data,
       balance: balance,
-      oDate: data.oDate ? data.oDate : null,
-      dDate: data.dDate ? data.dDate : null,
+      oDate: data.oDate || null,
+      dDate: data.dDate || null,
+      srNo:data.srNo || null,
+      amount:data.amount || null,
+      advance:data.advance || null,
+      balance:data.balance || null,
     };
 
     axios.post("http://localhost:8000/postData", postData).then((resp) => {
@@ -60,8 +64,8 @@ const Form = () => {
         <div className='form-field col-lg-12'>
           {/* {errors.name && <span style={{ color: "red", marginLeft:80 }}>{errors.name.message}</span>} */}
           <input id='Name' className='input-text js-input' type='text' placeholder='hidden' {...register("name", { required: "Name is must" })} />
-          <label className='label' htmlFor='Name' style={{color:errors.name && "red"}}>
-            {errors.name?"Name is must":"Name"}
+          <label className='label' htmlFor='Name' style={{ color: errors.name && "red" }}>
+            {errors.name ? "Name is must" : "Name"}
           </label>
         </div>
 
@@ -75,7 +79,7 @@ const Form = () => {
         <div className='form-field col-lg-6 '>
           <input id='D. Date' className='input-text js-input' type='date' placeholder='hidden' {...register("dDate")} />
           <label className='label' htmlFor='D. Date'>
-          Delivery Date
+            Delivery Date
           </label>
         </div>
 
@@ -265,28 +269,15 @@ const Form = () => {
           </tbody>
         </table>
 
-
-
-
-
         {/* submit-btn */}
         <div className='form-field col-lg-12 text-center'>
           <input className='submit-btn' type='submit' value='Submit' />
         </div>
 
-
-
-
         {/* preview-btn2 */}
         <div className='form-field col-lg-12 text-center'>
-        
           <input className='preview-btn2' type='submit' value='Submit' />
         </div>
-
-
-
-
-
       </form>
     </section>
   );

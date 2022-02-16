@@ -11,7 +11,7 @@ const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   database: "opticsDb",
-  password: "root",
+  password: "admin",
 });
 
 app.get("/getData",  (req, res) => {
@@ -45,7 +45,7 @@ app.post("/postData", (req, res) => {
   const oDate = data.oDate === null ? `${data.oDate}` : `"${data.oDate}"`;
   const dDate = data.dDate === null ? `${data.dDate}` : `"${data.dDate}"`;
   const columns = "name, contactNo, srNo, oDate, dDate, frame, amount, advance, balance, a, b, c, d, e, f, g, h , i, j, k, l, m, n, o, p, q";
-  const values = `"${data.name}", "${data.contactNo}", "${data.srNo}", ${oDate}, ${dDate}, "${data.frame}", "${data.amount}", "${data.advance}", "${data.balance}", "${data.a}", "${data.b}", "${data.c}", "${data.d}", "${data.e}", "${data.f}", "${data.g}", "${data.h}", "${data.i}", "${data.j}", "${data.k}", "${data.l}", "${data.m}", "${data.n}", "${data.o}", "${data.p}", "${data.q}"`;
+  const values = `"${data.name}", "${data.contactNo}", "${data.srNo}", ${oDate}, ${dDate}, "${data.frame}", ${data.amount}, ${data.advance}, ${data.balance}, "${data.a}", "${data.b}", "${data.c}", "${data.d}", "${data.e}", "${data.f}", "${data.g}", "${data.h}", "${data.i}", "${data.j}", "${data.k}", "${data.l}", "${data.m}", "${data.n}", "${data.o}", "${data.p}", "${data.q}"`;
   let sql = `INSERT INTO opticsdata (${columns}) VALUES (${values})`;
 
   db.query(sql, (err, result) => {
