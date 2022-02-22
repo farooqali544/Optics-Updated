@@ -2,6 +2,7 @@ import { React, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import "./Form.css";
+import { useNavigate } from "react-router-dom";
 const Form = () => {
   const {
     register,
@@ -13,6 +14,10 @@ const Form = () => {
   const [balance, setBalance] = useState();
   const [advance, setAdvance] = useState();
   const [amount, setAmount] = useState();
+
+  const navigate = useNavigate();
+
+
 
   useEffect(() => {
     if (advance && amount) {
@@ -91,16 +96,17 @@ const Form = () => {
         </div>
 
         <div className='form-field col-lg-12'>
+        
           <input
             id='Amount'
             className='input-text js-input'
             type='number'
             placeholder='hidden'
-            {...register("amount")}
+            {...register("amount", {required:"Amount is mandatory"})}
             onChange={(e) => setAmount(e.target.value)}
           />
-          <label className='label' htmlFor='Amount'>
-            Amount
+          <label className='label' htmlFor='Amount' style={{ color: errors.amount && "red" }}>
+           {errors.amount?"Amount is mandatory":"Amount"}
           </label>
         </div>
 
@@ -276,7 +282,7 @@ const Form = () => {
 
         {/* preview-btn2 */}
         <div className='form-field col-lg-12 text-center'>
-          <input className='preview-btn2' type='submit' value='Submit' />
+          <input onClick={()=>{navigate("/preview")}} className='preview-btn2' type='submit' value='Submit' />
         </div>
       </form>
     </section>

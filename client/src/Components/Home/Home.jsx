@@ -25,6 +25,7 @@ const Home = () => {
 
  <button class="glow-on-hover" type="button" onClick={() =>{navigate("/preview")}}>Preview Data</button>
 
+ <button class="glow-on-hover" type="button" onClick={() =>{navigate("/revenue")}}>See Revenue</button>
 
 </section>
 

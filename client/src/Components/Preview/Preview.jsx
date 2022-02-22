@@ -71,6 +71,8 @@ const Preview = () => {
     })
   };
 
+
+  const dummyData = ["Farooq", "03121511", "0312", "null", "null", "5460", "5464", "16464","null", "5460", "5464", "16464"];
   return (
     <div className='preview-container'>
       <h1>Preview Data</h1>
@@ -116,7 +118,7 @@ const Preview = () => {
           </thead>
 
           <tbody>
-            {opticsData.map((item) => (
+            {dummyData.map((item) => (
               <>
                 <tr
                   className='basic-data'
@@ -129,7 +131,7 @@ const Preview = () => {
                     }
                   }}
                 >
-                  <td>{item.name}</td>
+                  {/* <td>{item.name}</td>
                   <td>{item.contactNo}</td>
                   <td>{item.srNo}</td>
                   <td>{getDate(item.oDate)}</td>
@@ -137,7 +139,15 @@ const Preview = () => {
                   <td>{item.frame}</td>
                   <td>{item.amount}</td>
                   <td>{item.advance}</td>
-                  <td onClick={() => deleteItem(item.id)}>delete</td>
+                  <td onClick={() => deleteItem(item.id)}>delete</td> */}
+                  <td>{item}</td>
+                  <td>{item}</td>
+                  <td>{item}</td>
+                  <td>{item}</td>
+                  <td>{item}</td>
+                  <td>{item}</td>
+                  <td>{item}</td>
+                  <td>{item}</td>
                 </tr>
                 {showOpticsData === item.id && (
                   <tr>

@@ -4,6 +4,7 @@ import Preview from "./Components/Preview/Preview";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Temp from "./Components/Preview/Temp";
+import Revenue from "./Components/Revenue/Revenue";
 function App() {
   return (
     <BrowserRouter>
@@ -12,7 +13,8 @@ function App() {
           
           <Route path='/' element={<Home />} />
           <Route path='/add' element={<Form />} />
-          <Route path='/preview' element={<Temp />} />
+          <Route path='/preview' element={<Preview />} />
+          <Route path='/revenue' element={<Revenue />} />
         </Routes>
       </div>
     </BrowserRouter>

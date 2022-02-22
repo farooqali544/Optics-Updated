@@ -1,0 +1,10 @@
+.select-month{
+    cursor: pointer;
+}
+ .select-month-active{
+    color: blue;
+}
+
+.select-month:hover{
+    color: rgb(156, 156, 187);
+}
